@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dynamic Store Client</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar container">
+    <div class="brand"><span class="brand__dot"></span>QuickShop</div>
+    <nav class="nav" aria-label="Main">
+      <button class="btn" id="theme-toggle" type="button">Switch theme</button>
+      <button class="btn btn--primary" id="cart-open" type="button">Cart <span class="badge" id="cart-count">0</span></button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <h1>Shop products</h1>
+      <p>Search, filter by category and sort. Live data from FakeStoreAPI.</p>
+    </section>
+
+    <div class="toolbar">
+      <input class="field" id="search" type="search" placeholder="Search products" aria-label="Search products">
+      <select class="field" id="sort" aria-label="Sort products">
+        <option value="default">Sort: Featured</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="rating">Top rated</option>
+        <option value="name">Name A to Z</option>
+      </select>
+    </div>
+
+    <div class="tabs" id="tabs" role="tablist" aria-label="Categories"></div>
+    <div class="banner" id="banner" role="alert" hidden></div>
+    <p class="status" id="status" aria-live="polite"></p>
+    <section class="product-grid" id="product-grid"></section>
+  </main>
+
+  <aside class="cart" id="cart" aria-label="Shopping cart" hidden>
+    <div class="cart__head">
+      <h2>Your cart</h2>
+      <button class="btn" id="cart-close" type="button">Close</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart__total"><span>Total</span><span id="cart-total">$0.00</span></div>
+  </aside>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
